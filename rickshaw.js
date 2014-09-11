@@ -75,19 +75,47 @@ angular.module('angular-rickshaw', [])
                             var xAxisConfig = {
                                 graph: graph
                             };
+                            var xAxis = {};
+
+                            if (scope.features.xAxis.element) {
+                                xAxisConfig.element = scope.features.xAxis.element;
+                            }
+
                             if (scope.features.xAxis.timeUnit) {
                                 var time = new Rickshaw.Fixtures.Time();
                                 xAxisConfig.timeUnit = time.unit(scope.features.xAxis.timeUnit);
+                                xAxis = new Rickshaw.Graph.Axis.Time(xAxisConfig);
                             }
-                            var xAxis = new Rickshaw.Graph.Axis.Time(xAxisConfig);
+
+                            if (scope.features.xAxis.tickFormat) {
+                                if (typeof scope.features.xAxis.tickFormat === 'function'){
+                                    xAxisConfig.tickFormat = scope.features.xAxis.tickFormat;
+                                }
+                                else {
+                                    xAxisConfig.tickFormat = Rickshaw.Fixtures.Number[scope.features.xAxis.tickFormat];
+                                }
+
+                                xAxis = new Rickshaw.Graph.Axis.X(xAxisConfig);
+                            }
+
                             xAxis.render();
                         }
                         if (scope.features && scope.features.yAxis) {
                             var yAxisConfig = {
                                 graph: graph
                             };
+
+                            if (scope.features.yAxis.element) {
+                                yAxisConfig.element = scope.features.yAxis.element;
+                            }
+
                             if (scope.features.yAxis.tickFormat) {
-                                yAxisConfig.tickFormat = Rickshaw.Fixtures.Number[scope.features.yAxis.tickFormat];
+                                if (typeof scope.features.yAxis.tickFormat === 'function'){
+                                    yAxisConfig.tickFormat = scope.features.yAxis.tickFormat;
+                                }
+                                else {
+                                    yAxisConfig.tickFormat = Rickshaw.Fixtures.Number[scope.features.yAxis.tickFormat];
+                                }
                             }
 
                             var yAxis = new Rickshaw.Graph.Axis.Y(yAxisConfig);
