@@ -31,7 +31,8 @@ angular.module('angular-rickshaw', [])
                     series: '=rickshawSeries',
                     features: '=rickshawFeatures'
                 },
-                // replace: true,
+                replace: true,
+                template: '<div class="rickshaw_wrapper"></div>',
                 link: function(scope, element, attrs) {
                     function getSettings(el) {
                         var settings = angular.copy(scope.options);
