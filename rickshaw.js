@@ -36,7 +36,6 @@ angular.module('angular-rickshaw', [])
 
           function update() {
             var mainEl = angular.element(element);
-            mainEl.append(graphEl);
             mainEl.empty();
             var graphEl = $compile('<div></div>')(scope);
             mainEl.append(graphEl);
