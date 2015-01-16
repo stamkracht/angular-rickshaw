@@ -14,9 +14,6 @@
  partial / html:
  TODO
 
- controller / js:
- TODO
-
  //end: usage
  */
 
@@ -163,8 +160,6 @@ angular.module('angular-rickshaw', [])
                     });
 
                     update();
-                },
-                controller: function($scope, $element, $attrs) {
                 }
             };
         });
