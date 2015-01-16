@@ -150,17 +150,7 @@ angular.module('angular-rickshaw', [])
             }
           }
 
-          scope.$watch('options', function(newValue, oldValue) {
-            if (!angular.equals(newValue, oldValue)) {
-              update();
-            }
-          });
-          scope.$watch('series', function(newValue, oldValue) {
-            if (!angular.equals(newValue, oldValue)) {
-              update();
-            }
-          });
-          scope.$watch('features', function(newValue, oldValue) {
+          scope.$watchCollection('[options, series, features]', function(newValue, oldValue) {
             if (!angular.equals(newValue, oldValue)) {
               update();
             }
