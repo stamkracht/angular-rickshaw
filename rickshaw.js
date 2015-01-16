@@ -128,7 +128,7 @@ angular.module('angular-rickshaw', [])
             }
 
             if (scope.features && scope.features.legend) {
-              var legendEl = $compile('<div></div>')(scope);
+              var legendEl = $compile('<div class="rickshaw_legend"></div>')(scope);
               mainEl.append(legendEl);
 
               var legend = new Rickshaw.Graph.Legend({
