@@ -7,9 +7,6 @@
  @param {Object} attrs REMEMBER: use snake-case when setting these on the partial! i.e. my-attr='1' NOT myAttr='1'
  TODO
 
- @dependencies
- TODO
-
  @usage
  partial / html:
  TODO
@@ -23,7 +20,7 @@
 window.Rickshaw = require('rickshaw');
 
 angular.module('angular-rickshaw', [])
-        .directive('rickshaw', function($compile) {
+        .directive('rickshaw', ['$compile', function($compile) {
             return {
                 restrict: 'EA',
                 scope: {
@@ -171,4 +168,4 @@ angular.module('angular-rickshaw', [])
                     update();
                 }
             };
-        });
+        }]);
