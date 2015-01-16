@@ -23,6 +23,7 @@
 'use strict';
 
 /* global Rickshaw */
+window.Rickshaw = require('rickshaw');
 
 angular.module('angular-rickshaw', [])
         .directive('rickshaw', function($compile) {
