@@ -80,6 +80,10 @@ angular.module('angular-rickshaw', [])
                                 xAxisConfig.element = scope.features.xAxis.element;
                             }
 
+                            if (scope.features.xAxis.orientation) {
+                                xAxisConfig.orientation = scope.features.xAxis.orientation;
+                            }
+
                             if (scope.features.xAxis.timeUnit) {
                                 var time = new Rickshaw.Fixtures.Time();
                                 xAxisConfig.timeUnit = time.unit(scope.features.xAxis.timeUnit);
@@ -106,6 +110,10 @@ angular.module('angular-rickshaw', [])
 
                             if (scope.features.yAxis.element) {
                                 yAxisConfig.element = scope.features.yAxis.element;
+                            }
+
+                            if (scope.features.xAxis.orientation) {
+                                yAxisConfig.orientation = scope.features.yAxis.orientation;
                             }
 
                             if (scope.features.yAxis.tickFormat) {
