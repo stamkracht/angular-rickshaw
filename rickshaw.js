@@ -110,7 +110,7 @@ angular.module('angular-rickshaw', [])
                 yAxisConfig.element = yAxisEl[0];
               }
 
-              if (scope.features.xAxis.orientation) {
+              if (scope.features.yAxis.orientation) {
                 yAxisConfig.orientation = scope.features.yAxis.orientation;
               }
 
