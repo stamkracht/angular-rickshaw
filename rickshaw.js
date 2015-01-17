@@ -74,6 +74,14 @@ angular.module('angular-rickshaw', [])
                 xAxisConfig.element = xAxisEl[0];
               }
 
+              if (scope.features.xAxis.width) {
+                xAxisConfig.width = scope.features.xAxis.width;
+              }
+
+              if (scope.features.xAxis.height) {
+                xAxisConfig.height = scope.features.xAxis.height;
+              }
+
               if (scope.features.xAxis.orientation) {
                 xAxisConfig.orientation = scope.features.xAxis.orientation;
               }
@@ -112,6 +120,14 @@ angular.module('angular-rickshaw', [])
                 var yAxisEl = $compile('<div class="rickshaw_y_axis"></div>')(scope);
                 mainEl.append(yAxisEl);
                 yAxisConfig.element = yAxisEl[0];
+              }
+
+              if (scope.features.yAxis.width) {
+                yAxisConfig.width = scope.features.yAxis.width;
+              }
+
+              if (scope.features.yAxis.height) {
+                yAxisConfig.height = scope.features.yAxis.height;
               }
 
               if (scope.features.yAxis.orientation) {
